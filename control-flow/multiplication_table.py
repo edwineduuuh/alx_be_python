@@ -9,7 +9,7 @@
 # (the current number in the loop from 1 to 10).
 # Print each line of the multiplication table in the format: “X * Y = Z”, 
 # where X is the user’s number, Y is the current number in the loop, and Z is the product.
-number = int(input("Enter a number to see if it's in the multiplication table: "))
+number = int(input("Enter a number to see its multiplication table: "))
 
 for i in range(1,11):
     for j in range(1,number + 1):
