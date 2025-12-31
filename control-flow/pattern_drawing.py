@@ -8,7 +8,7 @@
 # After completing each row, print a newline character to move to the next row.
 # Continue until the pattern forms a square of the inputted size.
 
-size = int(input("Enter size of pattern: "))
+size = int(input("Enter size of the pattern: "))
 i = 0
 while i < size:
     i = i + 1
