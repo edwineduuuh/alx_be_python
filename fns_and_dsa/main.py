@@ -12,33 +12,53 @@
 # if __name__ == "__main__":
 #     main()
 
+# main.py
+# This is the entry point that uses the module
+
 import shopping_list_manager
 
-def main():
+def run_shopping_list():
     shopping_list = []
-    
-    print("Welcome to Shopping List Manager!\n")
     
     while True:
         shopping_list_manager.display_menu()
         choice = input("Enter your choice: ").strip()
 
         if choice == '1':
-            shopping_list_manager.add_item(shopping_list)
-            
+            item = input("Enter the item to add: ").strip()
+            if item:
+                shopping_list.append(item)
+                print(f"'{item}' added to the list.\n")
+            else:
+                print("No item entered.\n")
+
         elif choice == '2':
-            shopping_list_manager.remove_item(shopping_list)
-            
+            if not shopping_list:
+                print("List is empty - nothing to remove.\n")
+            else:
+                item = input("Enter the item to remove: ").strip()
+                if item in shopping_list:
+                    shopping_list.remove(item)
+                    print(f"'{item}' removed from the list.\n")
+                else:
+                    print("Item not found.\n")
+
         elif choice == '3':
-            shopping_list_manager.view_list(shopping_list)
-            
+            print("\nCurrent Shopping List:")
+            if not shopping_list:
+                print("   (empty)\n")
+            else:
+                for i, item in enumerate(shopping_list, 1):
+                    print(f"   {i}. {item}")
+                print()
+
         elif choice == '4':
             print("Goodbye!")
             break
-            
+
         else:
-            print("Invalid choice. Please try again.")
+            print("Invalid choice. Please try again.\n")
 
-
+# Run the program
 if __name__ == "__main__":
-    main()
+    run_shopping_list()
