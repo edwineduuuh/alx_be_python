@@ -22,7 +22,7 @@ def run_shopping_list():
     
     while True:
         shopping_list_manager.display_menu()
-        choice = input("Enter your choice: ").strip()
+        choice = int(input("Enter your choice: ")).strip()
 
         if choice == '1':
             item = input("Enter the item to add: ").strip()
