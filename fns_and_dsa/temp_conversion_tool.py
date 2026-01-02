@@ -37,7 +37,7 @@ def main():
     except ValueError:
         raise ValueError("Invalid input. Please enter a numeric value")
     
-    unit = input("Is this temperature in Celsisu or Fahrenheit? C/F?: ").strip().upper()
+    unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
 
     if unit == 'C':
         converted = convert_to_fahrenheit(temperature)
