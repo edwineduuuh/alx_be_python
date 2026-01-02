@@ -46,7 +46,7 @@ def main():
         converted = convert_to_celsius(temperature)
         print(f"{temperature:.1f}°F is {converted:.1f}°C")
     else:
-        print("Invalid temperature input")
+        print("Invalid unit. Please enter C or F.")
 
 if __name__ == "__main__":
     main()
