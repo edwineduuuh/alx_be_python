@@ -22,10 +22,10 @@ class Book:
 
 class Library:
     def __init__(self):
-        self.books = []
+        self._books = []
 
     def add_book(self, book):
-        self.books.append(book)
+        self._books.append(book)
     
     def check_out_book(self, title):
         book = self._find_book(title)
@@ -40,9 +40,9 @@ class Library:
         return False
         
     def list_available_books(self):
-        for book in self.books:
+        for book in self._books:
             if book.is_available():
                 print(f"{book.title} by {book.author}")
     
     def _find_book(self, title):
-        return next((book for book in self.books if book.title == title), None)
+        return next((book for book in self._books if book.title == title), None)
